@@ -1,19 +1,21 @@
 window.addEventListener("load", init);
 
+const kutyaLista=["foxterrier","kuvasz","puli","agár","újfullandi","keverék"]
+
 function init(){
 
-    let tarolo = document.getElementById("myList");
-    
-    tarolo.innerHTML += htmlBeIras();
+    const ARTICLE = document.querySelectorAll("article");
+    let htmlValtozo = kutyaKiir()
+    ARTICLE[0].innerHTML = htmlValtozo
 
 }
 
-function htmlBeIras(){
-    let htmlIras = "<ul>"
-    for (let index = 0; index < 10; index++) {
-        htmlIras += "<div>" + index + "</div>"
+function kutyaKiir(){
+    let htmlValtozo = ""
+    for (let index = 0; index < kutyaLista.length; index++) {
+        htmlValtozo += `<div><p> ${kutyaLista[index]} </p></div>`;
     }
-    htmlIras += "</ul>"
-
-    return htmlIras;
+    console.log(htmlValtozo)
+    return htmlValtozo;
+    
 }
